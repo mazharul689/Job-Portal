@@ -1,0 +1,56 @@
+{% extends 'base/base.html' %}
+
+
+{% block body %}
+{% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-{{ message.tags|default:'info' }} alert-dismissible fade show mb-4 small" role="alert">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    {% endfor %}
+{% endif %}
+<div class="row">
+    <table class="table table-hover">
+        <tr>
+            <td>#</td>
+            <td>Job Title</td>
+            <td>Job Type</td>
+            <td>Applied By</td>
+            <td>Resume</td>
+            <td>Status</td>
+            <td>Actions</td>
+        </tr>
+
+        {% for a in appliedjobs %}
+        <tr>
+            <td>{{forloop.counter}}</td>
+            <td>{{a.job.title}}</td>
+            <td>{{a.job.type}}</td>
+            <td>{{a.user.name}}</td>
+            <td>
+                <a href="{{ MEDIA_URL }}{{a.user.resume.url}}" target="_blank">
+                    Download Resume
+                </a>
+            </td>
+            <td>{{a.status}}</td>
+            <td>
+
+                {% if a.status == 'shortlisted' %}
+                <a href="{% url 'pending' a.id %}" class="btn btn-warning rounded-pill">Pending</a>
+                <a href="{% url 'rejected' a.id %}" class="btn btn-danger rounded-pill">Rejected</a>
+                {% elif a.status == 'pending' %}
+                <a href="{% url 'shortlisted' a.id %}" class="btn btn-primary rounded-pill">Shortlisted</a>
+                <a href="{% url 'rejected' a.id %}" class="btn btn-danger rounded-pill">Rejected</a>
+                {% elif a.status == 'rejected' %}
+                <a href="{% url 'shortlisted' a.id %}" class="btn btn-primary rounded-pill">Shortlisted</a>
+                <a href="{% url 'pending' a.id %}" class="btn btn-warning rounded-pill">Pending</a>
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+
+    </table>
+</div>
+
+{% endblock body %}

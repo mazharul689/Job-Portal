@@ -1,0 +1,34 @@
+{% extends 'base/base.html' %}
+
+
+{% block body %}
+{% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-{{ message.tags|default:'info' }} alert-dismissible fade show mb-4 small" role="alert">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    {% endfor %}
+{% endif %}
+<div class="row">
+    <table class="table table-hover">
+        <tr>
+            <td>#</td>
+            <td>Job Title</td>
+            <td>Job Type</td>
+            <td>Status</td>
+        </tr>
+        
+        {% for a in allappliedjobs %}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{a.job.title}}</td>
+                <td>{{a.job.type}}</td>
+                <td>{{a.status}}</td>
+            </tr>
+        {% endfor %}
+            
+    </table>
+</div>
+
+{% endblock body %}

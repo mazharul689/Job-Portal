@@ -1,0 +1,138 @@
+/* ==========================================
+   1. USER BADGE & AVATAR STYLES
+   ========================================== */
+.user-badge {
+    width: 37px;
+    height: 37px;
+    background-color: #846767;
+    color: #fff;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 14px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* ==========================================
+   2. UNIVERSAL DJANGO FORM STYLES ({{ form.as_p }})
+   ========================================== */
+.form-fields p {
+    margin-bottom: 1.25rem;
+}
+
+.form-fields label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #343a40;
+    margin-bottom: 0.375rem;
+}
+
+/* Inputs, Selects, and Textareas */
+.form-fields input[type="text"],
+.form-fields input[type="email"],
+.form-fields input[type="password"],
+.form-fields input[type="number"],
+.form-fields input[type="url"],
+.form-fields input[type="date"],
+.form-fields input[type="datetime-local"],
+.form-fields select,
+.form-fields textarea {
+    display: block;
+    width: 100%;
+    padding: 0.6rem 0.9rem;
+    font-size: 0.95rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #f8f9fa;
+    border: 1px solid #ced4da;
+    border-radius: 0.5rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+/* File Upload Controls */
+.form-fields input[type="file"] {
+    display: block;
+    width: 100%;
+    padding: 0.45rem 0.75rem;
+    font-size: 0.875rem;
+    color: #495057;
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    border-radius: 0.5rem;
+}
+
+/* Checkbox & Radio Buttons */
+.form-fields input[type="checkbox"],
+.form-fields input[type="radio"] {
+    width: 1em;
+    height: 1em;
+    margin-right: 0.5em;
+    vertical-align: middle;
+    border: 1px solid #ced4da;
+    border-radius: 0.25em;
+}
+
+/* Focus States */
+.form-fields input:focus,
+.form-fields select:focus,
+.form-fields textarea:focus {
+    background-color: #fff;
+    border-color: #0d6efd;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.15);
+}
+
+/* Help text and Error messages */
+.form-fields .helptext {
+    display: block;
+    font-size: 0.75rem;
+    color: #6c757d;
+    margin-top: 0.35rem;
+}
+
+.form-fields .errorlist {
+    list-style: none;
+    padding: 0;
+    margin: 0.35rem 0 0 0;
+    color: #dc3545;
+    font-size: 0.8125rem;
+    font-weight: 500;
+}
+
+/* ==========================================
+   3. CARDS & DASHBOARD UI UTILITIES
+   ========================================== */
+.form-card-shadow {
+    box-shadow: 0 8px 24px -4px rgba(33, 37, 41, 0.06), 0 2px 6px -1px rgba(33, 37, 41, 0.04) !important;
+}
+
+.stat-icon {
+    width: 56px;
+    height: 56px;
+}
+
+.tracking-wide {
+    letter-spacing: 0.05em;
+}
+
+/* ==========================================
+   4. NAVIGATION BAR STYLES
+   ========================================== */
+.custom-nav-link {
+    transition: all 0.2s ease-in-out;
+}
+
+.custom-nav-link:hover {
+    color: #0d6efd !important;
+    background-color: #f8f9fa;
+}
+
+.custom-nav-link.active {
+    color: #0d6efd !important;
+    background-color: #e7f1ff;
+    font-weight: 600 !important;
+}
