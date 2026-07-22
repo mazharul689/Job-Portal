@@ -26,42 +26,6 @@ A multi-user Job Portal web application built with Python and Django according t
 
 ---
 
-## Project Directory Structure
-
-JOB_PORTAL/
-│
-├── docs/                       # Project Documentation & Assessment Specs
-│   └── NSDA Job Portal L-4 (2).pdf
-│
-├── Job_App/                    # Main Django Application
-│   ├── templates/              # HTML Templates
-│   │   ├── base/               # Global Layouts (base.html, nav.html)
-│   │   └── pages/              # Application Pages (dashboard.html, authform.html, etc.)
-│   │
-│   ├── static/                 # Static Assets
-│   │   └── css/
-│   │       └── style.css       # Custom CSS
-│   │
-│   ├── admin.py
-│   ├── apps.py
-│   ├── forms.py                # Django Form Definitions
-│   ├── models.py               # Database Schemas (User, Profile, Job, Application)
-│   ├── urls.py                 # App Route Handlers
-│   └── views.py                # Business Logic & Controllers
-│
-├── Job_Portal/                 # Project Configuration Directory
-│   ├── settings.py             # Global Project Settings & Static Config
-│   ├── urls.py                 # Root URL Dispatcher
-│   ├── asgi.py
-│   └── wsgi.py
-│
-├── .gitignore                  # Git Exclusion Rules
-├── LICENSE                     # Project License
-├── manage.py                   # Django CLI Utility
-└── README.md                   # Documentation
-
----
-
 ## Tech Stack
 
 * Backend Framework: Python / Django
