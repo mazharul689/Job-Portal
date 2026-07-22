@@ -1,6 +1,6 @@
 # Django Job Portal Web Application (NSDA Level-4)
 
-A multi-user Job Portal web application built with Python and Django according to the NSDA Level-4 Web Application Development specifications[cite: 1]. This application connects recruiters and jobseekers across various domains, enabling job postings, application tracking, skill-matched dashboards, and custom user profile management[cite: 1].
+A multi-user Job Portal web application built with Python and Django according to the [NSDA Level-4 Web Application Development Specifications](docs/NSDA%20Job%20Portal%20L-4%20(2).pdf)[cite: 1]. This application connects recruiters and jobseekers across various domains, enabling job postings, application tracking, skill-matched dashboards, and custom user profile management[cite: 1].
 
 ---
 
@@ -30,14 +30,17 @@ A multi-user Job Portal web application built with Python and Django according t
 
 JOB_PORTAL/
 │
+├── docs/                       # Project Documentation & Assessment Specs
+│   └── NSDA Job Portal L-4 (2).pdf
+│
 ├── Job_App/                    # Main Django Application
 │   ├── templates/              # HTML Templates
 │   │   ├── base/               # Global Layouts (base.html, nav.html)
-│   │   └── pages/              # Application Pages (dashboard.html, authform.html, baseform.html, etc.)
+│   │   └── pages/              # Application Pages (dashboard.html, authform.html, etc.)
 │   │
 │   ├── static/                 # Static Assets
 │   │   └── css/
-│   │       └── style.css       # Custom Form, Card, and Navigation CSS
+│   │       └── style.css       # Custom CSS
 │   │
 │   ├── admin.py
 │   ├── apps.py
@@ -74,7 +77,7 @@ JOB_PORTAL/
 Ensure Python 3.10+ and Git are installed on your environment.
 
 ### 2. Clone the Repository
-git clone https://github.com/your-username/Job-Portal.git
+git clone https://github.com/your-username/JOB_PORTAL.git
 cd JOB_PORTAL
 
 ### 3. Create & Activate a Virtual Environment
@@ -112,6 +115,12 @@ python manage.py createsuperuser
 python manage.py runserver
 
 Visit http://127.0.0.1:8000/ in your browser to access the portal.
+
+---
+
+## References & Documentation
+
+* [NSDA Level-4 Web Application Development Specification Sheet](docs/NSDA%20Job%20Portal%20L-4%20(2).pdf)[cite: 1]
 
 ---
 
