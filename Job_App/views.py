@@ -153,8 +153,8 @@ def dashboardPage(req):
         job_len = JobpostModel.objects.filter(user = recruiter).__len__ or 0
         appliedjobs = ApplyModel.objects.filter(recruiter = recruiter).__len__ or 0
         jobid = None
-        totalpending = ApplyModel.objects.filter(status = 'shortlisted').__len__ or 0
-        totalshortlisted = ApplyModel.objects.filter(status = 'pending').__len__ or 0
+        totalpending = ApplyModel.objects.filter(status = 'pending').__len__ or 0
+        totalshortlisted = ApplyModel.objects.filter(status = 'shortlisted').__len__ or 0
         totalrejected = ApplyModel.objects.filter(status = 'rejected').__len__ or 0
     elif req.user.user_type == 'jobseeker':
         try:
