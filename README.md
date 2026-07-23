@@ -1,6 +1,6 @@
 # Django Job Portal Web Application (NSDA Level-4)
 
-A multi-user Job Portal web application built with Python and Django according to the NSDA Level-4 Web Application Development specifications[cite: 1]. This application connects recruiters and jobseekers across various domains, enabling job postings, application tracking, skill-matched dashboards, and custom user profile management[cite: 1].
+A multi-user Job Portal web application built with Python and Django according to the [NSDA Level-4 Web Application Development Specifications](docs/NSDA%20Job%20Portal%20L-4%20(2).pdf)[cite: 1]. This application connects recruiters and jobseekers across various domains, enabling job postings, application tracking, skill-matched dashboards, and custom user profile management[cite: 1].
 
 ---
 
@@ -26,39 +26,6 @@ A multi-user Job Portal web application built with Python and Django according t
 
 ---
 
-## Project Directory Structure
-
-JOB_PORTAL/
-│
-├── Job_App/                    # Main Django Application
-│   ├── templates/              # HTML Templates
-│   │   ├── base/               # Global Layouts (base.html, nav.html)
-│   │   └── pages/              # Application Pages (dashboard.html, authform.html, baseform.html, etc.)
-│   │
-│   ├── static/                 # Static Assets
-│   │   └── css/
-│   │       └── style.css       # Custom Form, Card, and Navigation CSS
-│   │
-│   ├── admin.py
-│   ├── apps.py
-│   ├── forms.py                # Django Form Definitions
-│   ├── models.py               # Database Schemas (User, Profile, Job, Application)
-│   ├── urls.py                 # App Route Handlers
-│   └── views.py                # Business Logic & Controllers
-│
-├── Job_Portal/                 # Project Configuration Directory
-│   ├── settings.py             # Global Project Settings & Static Config
-│   ├── urls.py                 # Root URL Dispatcher
-│   ├── asgi.py
-│   └── wsgi.py
-│
-├── .gitignore                  # Git Exclusion Rules
-├── LICENSE                     # Project License
-├── manage.py                   # Django CLI Utility
-└── README.md                   # Documentation
-
----
-
 ## Tech Stack
 
 * Backend Framework: Python / Django
@@ -74,7 +41,7 @@ JOB_PORTAL/
 Ensure Python 3.10+ and Git are installed on your environment.
 
 ### 2. Clone the Repository
-git clone https://github.com/your-username/Job-Portal.git
+git clone https://github.com/your-username/JOB_PORTAL.git
 cd JOB_PORTAL
 
 ### 3. Create & Activate a Virtual Environment
@@ -112,6 +79,12 @@ python manage.py createsuperuser
 python manage.py runserver
 
 Visit http://127.0.0.1:8000/ in your browser to access the portal.
+
+---
+
+## References & Documentation
+
+* [NSDA Level-4 Web Application Development Specification Sheet](docs/NSDA%20Job%20Portal%20L-4%20(2).pdf)[cite: 1]
 
 ---
 
