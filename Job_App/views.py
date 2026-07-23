@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth import login,logout
+from django.contrib.auth import login,logout, update_session_auth_hash
 from django.contrib import messages
 from .models import *
 from .forms import *
@@ -20,6 +20,7 @@ def registerPage(req):
     return render(req, 'pages/authform.html',data)
 
 
+
 def loginPage(req):
     if req.method == 'POST':
         form = AuthForm(req,req.POST)
@@ -28,6 +29,8 @@ def loginPage(req):
             login(req,user)
             messages.success(req, 'Login Successfull')
             return redirect('dashboard')
+        else:
+            messages.warning(req, 'Wrong Credentials')
     form = AuthForm()
     data = {
         'form': form,
@@ -35,6 +38,23 @@ def loginPage(req):
         'btn': 'Login'
     }
     return render(req, 'pages/authform.html',data)
+
+def passChangePage(req):
+    if req.method == 'POST':
+        form = PasswordChangeForm(req.user, req.POST)
+        if form.is_valid():
+            user = form.save()
+            update_session_auth_hash(req, user)
+            messages.success(req, 'Password Changed Successfully')
+            messages.warning(req, 'Please Log in Again')
+            return redirect('logout')
+    form = PasswordChangeForm(req.user)
+    data = {
+        'form': form,
+        'title': 'Password Change Form',
+        'btn': 'Save'
+    }
+    return render(req, 'pages/baseform.html',data)
 
 def recruiterprofilePage(req):
     try:

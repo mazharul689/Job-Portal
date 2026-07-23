@@ -4,6 +4,7 @@ urlpatterns = [
     path('',loginPage,name='login'),
     path('register/',registerPage,name='register'),
     path('logout/',logoutPage,name='logout'),
+    path('changepassword/',passChangePage,name='changepassword'),
     path('recruiter/',recruiterprofilePage,name='recruiter'),
     path('jobseeker/',jobseekerprofilePage,name='jobseeker'),
     path('addskill/',addSkillsPage,name='addskill'),

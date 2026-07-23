@@ -1,5 +1,5 @@
 from django import forms 
-from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm, PasswordChangeForm
 from .models import *
 
 class RegisterForm(UserCreationForm):
@@ -25,7 +25,13 @@ class AuthForm(AuthenticationForm):
         
         for i_name, i in self.fields.items():
             i.widget.attrs['class'] = 'form-control'
+
+class PasswordChangeForm(PasswordChangeForm):
+    def __init__(self, *args, **kwargs):
+            super().__init__(*args, **kwargs)
             
+            for i_name, i in self.fields.items():
+                i.widget.attrs['class'] = 'form-control'           
             
     
 class RPForm(forms.ModelForm):
